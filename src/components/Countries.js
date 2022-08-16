@@ -17,23 +17,29 @@ const Countries = () => {
     }, [])
   return (
     <>
+    <section className='card'>
 
-    { countries.map((country, index) => {
+    { countries
+    .sort((a,b) => a.name.official - b.name.official).map((country, index) => {
         const { name, population, region, capital, flags } = country
 
         return  (
             <article key={index}>
                 <div>
-                    <img src={flags.png} alt={name.official} />
-                    <h3>{name.official}</h3>
-                    <p>Population: {population}</p>
-                    <p>Region: {region}</p>
-                    <p>Capital: {capital}</p>
+                    <img src={flags.svg} alt={name.official} />
+                    <div className='details'>
+                        <h3>{name.official}</h3>
+                        <p>Population: <span>{population}</span></p>
+                        <p>Region: <span>{region}</span></p>
+                        <p>Capital: <span>{capital}</span></p>
+                    </div>
                 </div>
             </article>
         )
-    })}
+    })
+    }
 
+    </section>
     </>
   )
 
