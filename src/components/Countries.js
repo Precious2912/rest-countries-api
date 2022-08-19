@@ -7,9 +7,6 @@ const Countries = () => {
     const [countries, setCountries] = useState([]);
     const [q, setQ] = useState("");
     const [f, setF] = useState("Filter By Region");
-    // const [filterParam, setFilterParam] = useState(["Filter By Region"])
-
-
 
     const getCountryData = async() => {
         const data = await fetch(url)
@@ -25,7 +22,6 @@ const Countries = () => {
         e.preventDefault()
         const lowercase = e.target.value.toLowerCase();
         setQ(lowercase)
-        // console.log(q)
     }
 
     const handleFilter = (e) => {
