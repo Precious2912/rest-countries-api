@@ -80,6 +80,7 @@ body {
     width: 200px;
     border: none;
     border-radius: 5px;
+    margin: 2px;
 }
 /* end of filter */
 
@@ -99,11 +100,28 @@ img {
 .card article {
     box-shadow: 0 10px 10px rgba(0, 0, 255 0.5);
 }
+.card article .item{
+    width: 100%;
+    height: 350px;
+} 
+
+.card article .img-container{
+    height: 50%;
+    width: 100%;
+}
+.details{
+    height: 50%;
+    width: 100%;
+}
 
 .card article img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
+
  
 .card .details h3 {
     padding-bottom: 10px;
@@ -158,12 +176,20 @@ img {
         margin: 0;
     }
 
+    .filter .region-filter .select{
+        margin: 0px;
+    }
+
     .card {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 992px){
+     .header, .filter, .card {
+        padding: 20px 100px;
+     }
+
     .card {
         grid-template-columns: repeat(4, 1fr);
         gap: 40px;
