@@ -53,6 +53,7 @@ const Countries = () => {
         else {
             return country.name.official.toLowerCase().startsWith(q)
         }
+        return 0;
     })
 
       return (
